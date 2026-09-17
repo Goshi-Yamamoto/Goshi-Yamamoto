@@ -1,7 +1,7 @@
 # Goshi-Yamamoto
 **goshiy@hawaii.edu**
 
-## Education
+## EDUCATION
 ** Faculty of Environment and Information Studies, Keio University**, Tokyo, Japan
 - Master of Media and Governance - Major: Economy
 
