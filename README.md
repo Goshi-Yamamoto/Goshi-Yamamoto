@@ -9,4 +9,4 @@ Before enrolling in the MBA program at the University of Hawaiʻi at Mānoa, I e
 I have a deep passion for following stock markets and global financial trends. While living in Japan, I regularly stayed up until 3:00 or 4:00 AM just to watch FOMC meetings live as they happened. Outside of academics and finance, I am an enthusiastic foodie who loves trying different cuisines and exploring new local restaurants wherever I go.
 
 ---
-*Drafted with help from Claude (Anthropic, 2026); reviewed and edited by me.*
+*Drafted with help from Gemini Notebook (Google, 2026); reviewed and edited by me.*
