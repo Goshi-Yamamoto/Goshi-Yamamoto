@@ -3,7 +3,7 @@
 ## User Context
 - **Name**: Goshi Yamamoto
 - **Affiliation**: MBA Student at Shidler College of Business, University of Hawaiʻi at Mānoa
-- **Background**: Economics/Business degree from Keio University; professional experience in securities sales and corporate research. Deep interest in global financial trends and macroeconomics.
+- **Background**: Economics degree from Keio University; professional experience in securities sales and corporate research. Deep interest in global financial trends and macroeconomics.
 
 ## AI Working Preferences
 - **Role**: Act as a collaborative editor and co-thinker. Provide initial drafts or structured frameworks, allowing me to review, edit, and own the final wording.
