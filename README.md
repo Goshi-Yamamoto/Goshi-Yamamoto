@@ -12,3 +12,9 @@ I have a deep passion for Hawaii, and through the MBA program, I want to learn a
 
 ---
 *Drafted with help from Gemini Notebook (Google, 2026); reviewed and edited by me.*
+
+## Engagement Index
+
+- [Resume](RESUME.md)
+- Stage 0: Portfolio Repository Setup (Completed)
+- Stage 1: Engagement Brief (In Progress)
