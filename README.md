@@ -16,5 +16,5 @@ I have a deep passion for Hawaii, and through the MBA program, I want to learn a
 ## Engagement Index
 
 - [Resume](RESUME.md)
-- Stage 0: Portfolio Repository Setup (Completed)
+- * [Stage 0: Portfolio Repository Setup](./docs/) (Completed)
 - Stage 1: Engagement Brief (In Progress)
