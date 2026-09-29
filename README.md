@@ -17,4 +17,5 @@ I have a deep passion for Hawaii, and through the MBA program, I want to learn a
 
 - [Resume](RESUME.md)
 - * [Stage 0: Portfolio Repository Setup](./docs/) (Completed)
-- Stage 1: Engagement Brief (In Progress)
+- * [Stage 1: Engagement Brief](./docs/briefs/perfect-competition-brief.md) (In Progress)
+
