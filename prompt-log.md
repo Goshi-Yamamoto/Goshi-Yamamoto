@@ -14,3 +14,8 @@
 - **Prompt / Request**: Submitted my self-written Stage 1 brief for an AI Critique Attack (Genimi Notebook) to identify implicit assumptions, unsupported claims, and verify hypothesis falsiability without allowing prose rewrites.
 - **AI Output Provided**: AI identified implicit assumptions regarding labor budget availability and $P=MC$ crossovers, highlighted unsupported claims regarding gross vs. net profitability, and confirmed that my 20/20/24 bed hypothesis is strictly falsifiable by Stage 2 modeling.
 - **My Revisions / Verification**: Verified that my brief fulfills all Stage 1 requirements and that the hypothesis is ready for Stage 2 Excel Solver testing.
+
+## 2026-09-29: Stage 0 README Index Cleanup
+- **Prompt / Request**: Asked AI (Genimi Notebook) for the precise markdown formatting fix for nested bullet points in the root README index based on instructor feedback.
+- **AI Output Provided**: AI identified the stray asterisks in the index list and provided clean markdown syntax along with a descriptive commit message.
+- **My Revisions / Verification**: Removed stray asterisks from `README.md`, verified the index rendering on GitHub, and committed with `Fix bullet syntax in README index`.
