@@ -9,8 +9,10 @@ built_with: ""
 
 # <Capability> — model specification
 
+
 ## Purpose
 This model finds the best combination of tomatoes, carrots, and mesclun to maximize the farm's total seasonal profit in a perfectly competitive market. It also considers the farm's limits, including a maximum of 64 beds and 6,480 labor hours per season.
+
 
 ## Inputs — the named contract
 | Name | Value | Unit | Source |
@@ -38,29 +40,99 @@ This model finds the best combination of tomatoes, carrots, and mesclun to maxim
 | `TEMP_RATE` | 17.36 | USD per hour | Case scenario, labor constraints |
 | `TOTAL_LABOR_CAP` | 6480 | hours | Case scenario, labor constraints |
 
+
 ## Structure
-Each sheet or region, and what it is for.
+1. **Inputs**: Stores all the input data, including crop prices, fertilizer costs, base labor hours, diminishing returns rates, maximum beds for each crop, the farm's land limit (64 beds), labor limits, and hourly wages ($34.72 for the owner and $17.36 for temporary workers).
 
-## Calculation logic
-In named-range notation, never cell addresses:
+2. **Cost Structure & P&L**: Shows the number of beds for tomatoes, carrots, and mesclun (`BEDS_TOMATO`, `BEDS_CARROT`, `BEDS_MESCLUN`). It calculates total revenue, fertilizer costs, labor costs for the owner and temporary workers, and total seasonal profit.
 
-  LABOR_HRS(q) = q x HRS_PER_BED x WEEKS x (1 + DIM_PCT)^q
+3. **Marginal-Cost Schedules**: Shows the costs of adding each bed for all three crops, from 1 bed to the maximum number of beds. It calculates additional labor hours, marginal labor costs, and total marginal cost (MC) for each bed. It also compares price (P) with marginal cost (MC).
 
-"Column D times column E" is not a specification — it describes a spreadsheet
-that does not exist yet.
+4. **Optimization**: Uses Excel Solver to find the best number of beds for each crop to maximize total seasonal profit (`SEASON_PROFIT`). It includes decision variables and constraints, such as land limits, labor limits, and whole-number bed allocations.
+
+5. **Checks & Audit**: Checks whether the calculations are correct, including the labor hours for one bed (q = 1), the total land limit (64 beds), and the total labor limit (6,480 hours). It also checks for Excel errors and makes sure all calculated cells contain formulas.
+
+
+
+## Calculation Logic
+The model uses the following formulas:
+
+1. **Labor Hours for Each Crop**: The model calculates the total labor hours needed for each crop based on the number of beds.
+   - `LABOR_HRS_TOMATO` = `BEDS_TOMATO` * `TOM_BASE_HRS` * `WEEKS` * (1 + `TOM_DIM_PCT`)^`BEDS_TOMATO`
+   - `LABOR_HRS_CARROT` = `BEDS_CARROT` * `CAR_BASE_HRS` * `WEEKS` * (1 + `CAR_DIM_PCT`)^`BEDS_CARROT`
+   - `LABOR_HRS_MESCLUN` = `BEDS_MESCLUN` * `MES_BASE_HRS` * `WEEKS` * (1 + `MES_DIM_PCT`)^`BEDS_MESCLUN`
+   - `TOTAL_LABOR_HRS` = `LABOR_HRS_TOMATO` + `LABOR_HRS_CARROT` + `LABOR_HRS_MESCLUN`
+
+2. **Revenue and Fertilizer Costs**: The model calculates total revenue and fertilizer costs based on the number of beds for each crop.
+   - `TOTAL_REVENUE` = (`BEDS_TOMATO` * `TOM_PRICE`) + (`BEDS_CARROT` * `CAR_PRICE`) + (`BEDS_MESCLUN` * `MES_PRICE`)
+   - `TOTAL_FERTILIZER` = (`BEDS_TOMATO` * `TOM_FERT`) + (`BEDS_CARROT` * `CAR_FERT`) + (`BEDS_MESCLUN` * `MES_FERT`)
+
+3. **Labor Costs**: The owner's labor hours are used first. If more labor is needed, temporary workers are used.
+   - `OWNER_HRS_USED` = MIN(`TOTAL_LABOR_HRS`, `OWNER_HRS_CAP`)
+   - `TEMP_HRS_USED` = MAX(0, `TOTAL_LABOR_HRS` - `OWNER_HRS_CAP`)
+   - `TOTAL_LABOR_COST` = (`OWNER_HRS_USED` * `OWNER_RATE`) + (`TEMP_HRS_USED` * `TEMP_RATE`)
+
+4. **Seasonal Profit**: The model calculates total seasonal profit by subtracting fertilizer costs, labor costs, and fixed costs from total revenue.
+   - `SEASON_PROFIT` = `TOTAL_REVENUE` - `TOTAL_FERTILIZER` - `TOTAL_LABOR_COST` - `FIXED_OVERHEAD`
+
 
 ## Conventions
-The rules that are not visible in the formulas: costing order, allocation basis,
-rounding, what happens at the boundaries. State all of them. A convention you
-leave out is a convention the builder invents.
+The model follows these rules:
 
-## Validation rules
-The conditions the finished artifact must satisfy — check figures as acceptance
-criteria, hand calculations, and structural rules ("every calculated cell
-contains a formula", "no error cells").
+1. **Labor Priority**: The owner's labor hours are used first, up to 720 hours at $34.72 per hour. If more labor is needed, temporary workers are used, up to 5,760 hours at $17.36 per hour.
+
+2. **Labor Cost Allocation**: Labor costs are divided among the three crops using the farm's average labor rate (`BLENDED_LABOR_RATE` = `TOTAL_LABOR_COST` / `TOTAL_LABOR_HRS`).
+
+3. **Fixed Costs**: The farm has $20,000 in fixed seasonal costs. These costs are subtracted when calculating the final seasonal profit.
+
+4. **Diminishing Returns**: Labor hours increase as more beds are planted. The model uses the formula `(1 + DIM_PCT)^q` to calculate this increase.
+
+5. **Whole Number Beds**: The number of beds for each crop must be a whole number and cannot be negative.
+
+
+## Validation Rules
+The completed Excel model must pass the following checks:
+
+1. **Single-Bed Check (q = 1)**: The model checks the labor hours needed for one tomato bed.
+   - Tomato (1 bed): 1 * 2.5 * 36 * (1 + 0.10)^1 = 99 labor hours.
+
+2. **Initial Crop Mix Check (20 / 20 / 24)**: The model checks the total labor hours for the initial crop mix.
+   - The total labor hours should be about 14,547 hours, which is higher than the farm's labor limit of 6,480 hours.
+
+3. **Target Results Check**: The model compares its results with the expected values.
+   - Optimal Mix: 10 tomato beds, 20 carrot beds, and 30 mesclun beds (60 beds in total).
+   - Seasonal Net Profit: $42,762 after subtracting $20,000 in fixed costs.
+   - P ≈ MC Points: About 10 beds for tomatoes, 10 beds for carrots, and 6 beds for mesclun.
+
+4. **Solver Check**: The model runs Excel Solver using two different starting points (0 / 0 / 0 and 20 / 0 / 0).
+   - Both runs should give the same optimal mix of 10 / 20 / 30.
+
+5. **Excel Formula and Error Checks**: The model checks that all calculations and constraints are correct.
+   - All calculated cells must use formulas with named ranges instead of manually entered values.
+   - There should be no Excel errors, such as #REF!, #DIV/0!, or #NAME?.
+   - All constraint checks must show that the limits are satisfied.
+
 
 ## Outputs
-Each result the model reports, by name.
+The model reports the following results:
+
+1. **Optimal Crop Mix**: Shows the best number of beds for each crop to maximize seasonal profit.
+   - `OPTIMAL_BEDS_TOMATO`: 10 beds
+   - `OPTIMAL_BEDS_CARROT`: 20 beds
+   - `OPTIMAL_BEDS_MESCLUN`: 30 beds
+
+2. **Total Beds and Labor Hours**: Shows the total number of beds used and the total labor hours needed.
+   - `TOTAL_PLANTED_BEDS`: 60 out of 64 beds
+   - `TOTAL_LABOR_HRS`: About 5,277 hours out of 6,480 hours
+
+3. **Revenue and Costs**: Shows the farm's total revenue and expenses for the season.
+   - `TOTAL_REVENUE`: $210,880
+   - `TOTAL_FERTILIZER`: $44,000
+   - `TOTAL_LABOR_COST`: About $104,118
+   - `FIXED_OVERHEAD`: $20,000
+
+4. **Seasonal Profit**: Shows the final profit after subtracting fertilizer costs, labor costs, and fixed costs.
+   - `SEASON_PROFIT`: $42,762 (expected result)
 
 ## Audit findings
 Added AFTER the build. For each check: what you checked, what you found, what
