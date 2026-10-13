@@ -2,7 +2,7 @@
 type: brief
 engagement: perfect-competition
 capability: marginal-analysis
-date: 2026-09-30
+date: 2026-10-13
 status: committed
 ---
 
@@ -34,6 +34,10 @@ The data derived from these two tables serve as the foundational assumptions for
 Firstly, I expect the optimal mix to be 20 beds of tomatoes, 20 beds of carrots, and 24 beds of mesclun because of the high revenue, the low diminishing-returns rate, and the cost of fertilizer.
 A comparison of these three crops revealed that in terms of revenue, tomatoes are in first place ($8,800), mesclun is in second place ($2,700), and carrots are in third place ($2,094). While 1.25% has the lowest diminishing-returns rate of change for mesclun, 2.5% (carrots) is second, and 10% (tomatoes) is third, the cost of fertilizer for carrots ($440) is half the cost of fertilizer for tomatoes and mesclun ($880). Therefore, I decided to allocate the maximum number of planting beds to tomatoes and carrots, and assign the remaining 24 beds to mesclun.
 
+*Revised after feedback (October 12, 2026):*
+If the 20th tomato bed is not profitable because of its high marginal labor cost ($28,666.57), the number of tomato beds would be reduced to 13 beds (about 4,039 hours). The 7 beds removed from tomatoes would be used for other crops. Carrots would be increased to the maximum of 20 beds (about 983 hours), and the remaining space would be used for mesclun (24 beds, about 1,455 hours). With this new plan (13 tomato beds, 20 carrot beds, and 24 mesclun beds), the total seasonal labor would be about 6,477 hours. This is very close to the farm's labor limit of 6,480 hours, so the plan would use the available labor efficiently.
+
+
 ## Labor Analysis
 - **Analysis: The 20th tomato bed cost in labor hours**
   - Total Labor for 20 Tomato Beds: 20 × 2.5 × 36 × (1 + 0.10)^20 = 12,109.5 hours
@@ -44,6 +48,36 @@ A comparison of these three crops revealed that in terms of revenue, tomatoes ar
   - The labor cost for the 20th Tomato bed + Fertilizer cost per bed ($880) > Revenue per bed ($8,800)
 The revenue from the 20th bed of tomatoes is much lower than its marginal cost. As a price taker in a perfectly competitive market, it is not reasonable to produce when the price is lower than the marginal cost ($P < MC$). Therefore, the 20th bed of tomatoes does not earn its place.
 
+- **Analysis: The 20th carrot bed cost in labor hours**
+  - Total Labor for 20 Carrot Beds: 20 × 0.833 × 36 × (1 + 0.025)^20 = 982.8 hours
+  - Total Labor for 19 Carrot Beds: 19 × 0.833 × 36 × (1 + 0.025)^19 = 910.9 hours
+  - Marginal Labor for the 20th Carrot Bed: 982.8 - 910.9 = 71.9 hours
+  - The labor cost for the 20th Carrot bed: $17.36 × 71.9 = $1,248.18
+- **Analysis: The 20th carrot bed profit**
+  - The labor cost for the 20th Carrot bed ($1,248.18) + Fertilizer cost per bed ($440) = $1,688.18 < Revenue per bed ($2,094)
+The revenue from the 20th bed of carrots ($2,094) is higher than its marginal cost ($1,688.18). As a price taker in a perfectly competitive market, it is reasonable to produce when the price is higher than the marginal cost ($P < MC$). Therefore, the 20th bed of carrots earns its place.
+
+- **Analysis: The 24th mesclun bed cost in labor hours**
+  - Total Labor for 24 Mesclun Beds: 24 × 1.25 × 36 × (1 + 0.0125)^24 = 1,455.1 hours
+  - Total Labor for 23 Mesclun Beds: 23 × 1.25 × 36 × (1 + 0.0125)^23 = 1,377.3 hours
+  - Marginal Labor for the 24th Mesclun Bed: 1,455.1 - 1,377.3 = 77.8 hours
+  - The labor cost for the 24th Mesclun bed: $17.36 × 77.8 = $1,350.61
+- **Analysis: The 24th mesclun bed profit**
+  - The labor cost for the 24th Mesclun bed ($1,350.61) + Fertilizer cost per bed ($880) = $2,230.61 < Revenue per bed ($2,700)
+The revenue from the 24th bed of mesclun ($2,700) is higher than its marginal cost ($2,230.61). As a price taker in a perfectly competitive market, it is reasonable to produce when the price is higher than the marginal cost ($P < MC$). Therefore, the 24th bed of mesclun earns its place.
+
+- **Comparison to Total Farm Labor Limit**
+  - Planting 20 beds of tomatoes requires 12,109.5 hours of labor, which is almost twice (187%) the farm's total seasonal labor limit of 6,480 hours.
+
+- **Impact on Crop Mix**
+  - Since 20 beds of tomatoes require more labor than the farm's total labor limit, there would be no labor hours left for other crops. Therefore, the number of tomato beds must be reduced to save labor hours and allow the farm to grow other crops.
+
 
 ## How I would know I was wrong
+If the diminishing-returns rate and labor hours for q beds of one crop can be calculated accurately, and more mesclun is allocated than currently, my hypothesis falls apart. Also, I assumed that Beds available would be set to maximum, but that is not necessarily correct.
+
+*Revised after feedback (September 30, 2026):*
+I bet on the maximum number of 20 beds for tomatoes and carrots. If the Solver's answer does not support the maximum number of beds, my reasoning was wrong. I can also say that if the Solver's answer exceeds 24 beds of mesclun, my reasoning was also wrong.
+
+*Revised after feedback (October 6, 2026):*
 While I bet on the maximum number of 20 beds for tomatoes, my initial reasoning was clearly wrong because of the labor cost. I would also say that if the Solver's answer exceeds 24 beds of mesclun, my reasoning was also wrong.
