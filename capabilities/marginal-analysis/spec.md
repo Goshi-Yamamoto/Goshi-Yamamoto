@@ -3,8 +3,8 @@ type: spec
 capability: marginal-analysis
 engagement: perfect-competition
 date: 2026-10-13
-status: draft            # draft | built | audited
-built_with: ""
+status: audited            # draft | built | audited
+built_with: "NotebookLM"
 ---
 
 # <Capability> — model specification
@@ -134,6 +134,13 @@ The model reports the following results:
 4. **Seasonal Profit**: Shows the final profit after subtracting fertilizer costs, labor costs, and fixed costs.
    - `SEASON_PROFIT`: $42,762 (expected result)
 
-## Audit findings
-Added AFTER the build. For each check: what you checked, what you found, what
-you did about it.
+## Audit Findings
+I checked my Excel model and compared the results with the expected values. I found the following results:
+
+1. **Single-Bed Check**: One tomato bed requires 99 labor hours (1 × 2.5 × 36 × 1.10 = 99). This matches the expected result and shows that the labor hours formula works correctly for one bed.
+
+2. **Solver Check**: I ran Excel Solver using two different starting points (0 / 0 / 0 and 20 / 0 / 0). At first, the second run did not give the correct result because the labor hour constraint was missing. After adding the 6,480-hour limit, Solver gave the same crop mix (10 / 20 / 30) and seasonal profit ($42,775). This check helped me find a missing constraint in the Solver settings.
+
+3. **Profit Check**: The Excel model calculated a seasonal profit of $42,775.16, while the expected profit was $42,762. The difference was about $13. The Excel model calculated labor costs of $104,104.84, compared with $104,118 used in the expected result. This difference may be related to rounding, but the exact reason is not confirmed.
+
+4. **Marginal Cost Check**: I compared the marginal costs in Excel with Farm Profit Lab. In Excel, the marginal cost of the 5th tomato bed was $3,899.45, and the 6th bed was $4,575.35. In Farm Profit Lab, the estimated costs were $7,661 and $4,906. The marginal cost increased in Excel but decreased in Farm Profit Lab. This may be because the two models calculate labor costs differently.
