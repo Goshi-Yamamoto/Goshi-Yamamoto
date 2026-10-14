@@ -4,7 +4,7 @@ capability: marginal-analysis
 engagement: perfect-competition
 date: 2026-10-13
 status: audited            # draft | built | audited
-built_with: "NotebookLM"
+built_with: "Gemini Notebook"
 ---
 
 # <Capability> — model specification
