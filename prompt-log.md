@@ -43,3 +43,8 @@
 - **Prompt / Request**: Asked AI(Genimi Notebook) to translate and explain the instructor's feedback on the Stage 1 brief.
 - **AI Output Provided**: Translation and detailed explanation of the instructor's critique points.
 - **My Revisions / Verification**: Revised the Stage 1 Brief in accordance with the instructor's critique and documented responses to each critique point.
+
+## 2026-10-14: Stage 2 Spec, Build, Audit Created
+- **Prompt / Request**: Asked AI(Genimi Notebook and ChatGPT) to tto help create and check my Stage 2 Excel model.
+- **AI Output Provided**: Helped explain the requirements, create the Excel model, and check the calculations.
+- **My Revisions / Verification**: Checked the formulas, ran Solver, fixed a missing labor constraint, and compared marginal costs with Farm Profit Lab.
