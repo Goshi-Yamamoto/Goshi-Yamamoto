@@ -2,7 +2,7 @@
 type: brief
 engagement: perfect-competition
 capability: marginal-analysis
-date: 2026-10-13
+date: 2026-10-20
 status: committed
 ---
 
@@ -37,6 +37,23 @@ A comparison of these three crops revealed that in terms of revenue, tomatoes ar
 *Revised after feedback (October 12, 2026):*
 If the 20th tomato bed is not profitable because of its high marginal labor cost ($28,666.57), the number of tomato beds would be reduced to 13 beds (about 4,039 hours). The 7 beds removed from tomatoes would be used for other crops. Carrots would be increased to the maximum of 20 beds (about 983 hours), and the remaining space would be used for mesclun (24 beds, about 1,455 hours). With this new plan (13 tomato beds, 20 carrot beds, and 24 mesclun beds), the total seasonal labor would be about 6,477 hours. This is very close to the farm's labor limit of 6,480 hours, so the plan would use the available labor efficiently.
 
+*Revised after feedback (October 20, 2026):*
+To check whether the revised 13 / 20 / 24 crop mix makes economic sense, I calculated the marginal cost of the boundary beds.
+- **Analysis: The 13th tomato bed**
+   - **Marginal Labor Hours:** Adding the 13th tomato bed requires 649.65 hours. Total labor hours increase from 3,389.50 to 4,039.16 hours.
+   - **Marginal Cost (MC):**  Since total farm labor is already more than the owner's 720-hour limit, the temporary worker rate of $17.36 per hour is used.
+     - Labor Cost = 649.65 hours × $17.36 = $11,278.01
+     - Total MC = $11,278.01 + $880 (Fertilizer) = $12,158.01
+   - **Price (P):** $8,800 per bed.
+   - **Finding:** The marginal cost of the 13th tomato bed is $12,158.01, which is higher than its revenue of $8,800. This means the 13th tomato bed loses $3,358.01 based on marginal cost. Therefore, the farm stops at 13 tomato beds mainly because of the total labor limit of 6,480 hours, not because the 13th bed passes the P >= MC test.
+- **Analysis: The 25th tomato bed (Land Availability vs. Labor Constraint)**
+   - **Marginal Labor Hours:** Adding the 25th mesclun bed requires 79.58 hours. Total labor hours increase from 1,455.14 to 1,534.72 hours.
+   - **Marginal Cost (MC):** 
+     - Labor Cost = 79.58 hours × $17.36 = $1,381.51
+     - Total MC = $1,381.51 + $880 (Fertilizer) = $2,261.51
+   - **Price (P):** $2,700 per bed.
+   - **Finding:** For the 25th mesclun bed, the revenue of $2,700 is higher than the marginal cost of $2,261.51. This gives a positive marginal profit of $438.49. However, the farm cannot add the 25th mesclun bed because it would exceed the total seasonal labor limit of 6,480 hours, even though some land beds are still available.
+
 
 ## Labor Analysis
 - **Analysis: The 20th tomato bed cost in labor hours**
@@ -55,7 +72,7 @@ The revenue from the 20th bed of tomatoes is much lower than its marginal cost. 
   - The labor cost for the 20th Carrot bed: $17.36 × 71.9 = $1,248.18
 - **Analysis: The 20th carrot bed profit**
   - The labor cost for the 20th Carrot bed ($1,248.18) + Fertilizer cost per bed ($440) = $1,688.18 < Revenue per bed ($2,094)
-The revenue from the 20th bed of carrots ($2,094) is higher than its marginal cost ($1,688.18). As a price taker in a perfectly competitive market, it is reasonable to produce when the price is higher than the marginal cost ($P < MC$). Therefore, the 20th bed of carrots earns its place.
+The revenue from the 20th bed of carrots ($2,094) is higher than its marginal cost ($1,688.18). As a price taker in a perfectly competitive market, it is reasonable to produce when the price is higher than the marginal cost ($P > MC$). Therefore, the 20th bed of carrots earns its place.
 
 - **Analysis: The 24th mesclun bed cost in labor hours**
   - Total Labor for 24 Mesclun Beds: 24 × 1.25 × 36 × (1 + 0.0125)^24 = 1,455.1 hours
@@ -64,7 +81,7 @@ The revenue from the 20th bed of carrots ($2,094) is higher than its marginal co
   - The labor cost for the 24th Mesclun bed: $17.36 × 77.8 = $1,350.61
 - **Analysis: The 24th mesclun bed profit**
   - The labor cost for the 24th Mesclun bed ($1,350.61) + Fertilizer cost per bed ($880) = $2,230.61 < Revenue per bed ($2,700)
-The revenue from the 24th bed of mesclun ($2,700) is higher than its marginal cost ($2,230.61). As a price taker in a perfectly competitive market, it is reasonable to produce when the price is higher than the marginal cost ($P < MC$). Therefore, the 24th bed of mesclun earns its place.
+The revenue from the 24th bed of mesclun ($2,700) is higher than its marginal cost ($2,230.61). As a price taker in a perfectly competitive market, it is reasonable to produce when the price is higher than the marginal cost ($P > MC$). Therefore, the 24th bed of mesclun earns its place.
 
 - **Comparison to Total Farm Labor Limit**
   - Planting 20 beds of tomatoes requires 12,109.5 hours of labor, which is almost twice (187%) the farm's total seasonal labor limit of 6,480 hours.
