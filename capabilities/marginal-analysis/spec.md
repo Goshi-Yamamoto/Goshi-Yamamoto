@@ -39,6 +39,7 @@ This model finds the best combination of tomatoes, carrots, and mesclun to maxim
 | `TEMP_HRS_CAP` | 5760 | total hours for 4 temporary workers | Case scenario, labor constraints |
 | `TEMP_RATE` | 17.36 | USD per hour | Case scenario, labor constraints |
 | `TOTAL_LABOR_CAP` | 6480 | hours | Case scenario, labor constraints |
+| `FIXED_OVERHEAD` | 20000 | USD | Case scenario, fixed overhead expenses |
 
 
 ## Structure
@@ -52,6 +53,19 @@ This model finds the best combination of tomatoes, carrots, and mesclun to maxim
 
 5. **Checks & Audit**: Checks whether the calculations are correct, including the labor hours for one bed (q = 1), the total land limit (64 beds), and the total labor limit (6,480 hours). It also checks for Excel errors and makes sure all calculated cells contain formulas.
 
+### Marginal-Cost Schedule & Crossing Rules
+1. **Labor Pricing Rule for Marginal Hours:**
+   - Hours up to the 720-hour owner capacity (OWNER_HRS_CAP) are priced at the owner rate of $34.72/hr (OWNER_RATE).
+   - Hours above 720 are priced at the temporary worker rate of $17.36/hr (TEMP_RATE).
+
+2. **Marginal Cost (MC) Formula for Bed q:**
+   - **Incremental Labor Hours:** Delta_H_q = H(q) - H(q-1)
+   - **Marginal Labor Cost:** elta_H_q × Applicable Labor Rate (OWNER_RATE or TEMP_RATE)
+   - **Total Marginal Cost (MC_q):** Fertilizer Cost per bed + Marginal Labor Cost
+
+3. **Crossing Rule (Profit-Maximizing Condition):**
+   - The farm should produce bed q if the market price (P) is equal to or higher than the marginal cost (MC_q), or P >= MC_q.
+   - The farm should stop adding beds when P < MC_q, or when it reaches the total available farm labor limit of 6,480 hours or the total land capacity of 64 beds.
 
 
 ## Calculation Logic
@@ -100,9 +114,9 @@ The completed Excel model must pass the following checks:
    - The total labor hours should be about 14,547 hours, which is higher than the farm's labor limit of 6,480 hours.
 
 3. **Target Results Check**: The model compares its results with the expected values.
-   - Optimal Mix: 10 tomato beds, 20 carrot beds, and 30 mesclun beds (60 beds in total).
-   - Seasonal Net Profit: $42,762 after subtracting $20,000 in fixed costs.
-   - P ≈ MC Points: About 10 beds for tomatoes, 10 beds for carrots, and 6 beds for mesclun.
+   - Optimal Mix: 10 tomato beds, 20 carrot beds, and 30 mesclun beds (60 beds in total, exact match).
+   - Seasonal Net Profit: $42,775 with a tolerance of ±$20 (to cover $42,762 rounding).
+   - P ≈ MC Points: About 10 beds for tomatoes, 10 beds for carrots, and 6 beds for mesclun (tolerance ±1 bed).
 
 4. **Solver Check**: The model runs Excel Solver using two different starting points (0 / 0 / 0 and 20 / 0 / 0).
    - Both runs should give the same optimal mix of 10 / 20 / 30.
