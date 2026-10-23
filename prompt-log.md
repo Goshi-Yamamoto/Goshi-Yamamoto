@@ -63,3 +63,14 @@
 - **Prompt / Request**: Asked AIs (ChatGPT and Gemini Notebook) to translate, help me understand marginal cost, check standalone profitability, test crop capacity limits using Excel Solver, and add charts to GitHub.
 - **AI Output Provided**: Translation, explained the economic concepts and provided step-by-step instructions for checking Excel results, using Solver, and uploading figures.
 My Revisions / Verification: checked the marginal costs in my Excel model, tested each crop separately, and used Solver to test 21 carrot beds and 31 mesclun beds. Also, created three charts in Excel and confirmed they displayed correctly on GitHub.
+
+## Reflection — Stage 1.3
+
+### Where AI Helped
+AI helped me understand how to complete this work step by step. It was my first time using Excel Solver and GitHub, so I did not know how to use them at the beginning. AI explained each process in detail, which helped me complete all the tasks. Since I am an international student, AI also helped me with English expressions, grammar, and translation.
+
+### Where It Was Wrong
+The most important problem happened when I first used Excel Solver. Some conditions were missing, and the calculation settings were unclear, especially how decimal values should be handled. Because of this, I could not get the correct result. I could not solve this problem only with my own knowledge, and the professor's feedback helped me understand what was wrong and fix the model. Also, when I first worked on the assignment, Gemini Notebook did not always give accurate results, so I started using ChatGPT more often.
+
+### How I Verified
+I verified the results by running the Excel sheet by myself and changing the numbers of Tomatoes, Carrots, and Mesclun many times based on my predictions and the Solver results. This helped me check whether the results were reasonable. Creating charts also helped me understand the important points for maximizing profit. For example, I changed the carrot limit from 20 to 21 beds and confirmed that the profit increased by about **$353**. This helped me verify that the model was working correctly.
