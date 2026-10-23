@@ -11,3 +11,4 @@ Open `model.xlsx` in Microsoft Excel. Check the input values and change the numb
 
 ## Exercised In
 Perfect Competition — Stage 2: Spec, Build, Audit.
+Perfect Competition — Stage 3: Analysis and Decision Memo.
