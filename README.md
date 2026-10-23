@@ -19,6 +19,4 @@ I have a deep passion for Hawaii, and through the MBA program, I want to learn a
 - [Stage 0: Portfolio Repository Setup](./docs/) (Completed)
 - [Stage 1: Engagement Brief](./docs/briefs/perfect-competition-brief.md) (Completed)
 - [Stage 2: Spec, Build, Audit](capabilities/marginal-analysis/spec.md) (Completed)
-- [Stage 3: Analysis + Prompt Log](analysis/2026-10-22-perfect-competition-analysis.md)
-- [Stage 3: Analysis + Prompt Log](docs/decisions/2026-10-23-perfect-competition-memo.md)
-- [Stage 3: Analysis + Prompt Log](prompt-log.md)(Completed)
+- [Stage 3: Analysis + Prompt Log](analysis/2026-10-22-perfect-competition-analysis.md)(Completed)
