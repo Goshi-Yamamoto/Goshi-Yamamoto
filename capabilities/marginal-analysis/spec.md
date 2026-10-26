@@ -60,7 +60,7 @@ This model finds the best combination of tomatoes, carrots, and mesclun to maxim
 
 2. **Marginal Cost (MC) Formula for Bed q:**
    - **Incremental Labor Hours:** Delta_H_q = H(q) - H(q-1)
-   - **Marginal Labor Cost:** elta_H_q × Applicable Labor Rate (OWNER_RATE or TEMP_RATE)
+   - **Marginal Labor Cost:** Total Labor Cost(q) - Total Labor Cost(q-1), using owner-first labor pricing across the 720-hour threshold.
    - **Total Marginal Cost (MC_q):** Fertilizer Cost per bed + Marginal Labor Cost
 
 3. **Crossing Rule (Profit-Maximizing Condition):**
