@@ -78,4 +78,4 @@ I verified the results by running the Excel sheet by myself and changing the num
 ## 2026-10-26: Stage 2 Spec, Build, Audit Revisions Based on Instructor Feedback
 - **Prompt / Request**: Asked AI(Genimi Notebook and ChatGPT) to translate and explain the instructor's feedback on the Stage 2 Spec, Build, Audit.
 - **AI Output Provided**: Translation and detailed explanation of the instructor's critique points.
-- **My Revisions / Verification**: Revised the Stage 2 creating new model.xlsx.
+- **My Revisions / Verification**: Revised the Stage 2 creating new model.xlsx, and fixing spec.md.
