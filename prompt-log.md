@@ -57,7 +57,7 @@
 ## 2026-10-20: Stage 2 Spec, Build, Audit Revisions Based on Instructor Feedback
 - **Prompt / Request**: Asked AI(Genimi Notebook and ChatGPT) to translate and explain the instructor's feedback on the Stage 2 Spec, Build, Audit.
 - **AI Output Provided**: Translation and detailed explanation of the instructor's critique points.
-- **My Revisions / Verification**: Revised the Stage 1 Brief in accordance with the instructor's critique, documented responses to each critique point (in Inputs, Crossing Rule, and Validation Rules), and creating new model.xlsx.
+- **My Revisions / Verification**: Revised the Stage 2 in accordance with the instructor's critique, documented responses to each critique point (in Inputs, Crossing Rule, and Validation Rules), and creating new model.xlsx.
 
 ## 2026-10-22,23: Stage 3 Analysis + Prompt Log
 - **Prompt / Request**: Asked AIs (ChatGPT and Gemini Notebook) to translate, help me understand marginal cost, check standalone profitability, test crop capacity limits using Excel Solver, and add charts to GitHub.
@@ -74,3 +74,8 @@ The most important problem happened when I first used Excel Solver. Some conditi
 
 ### How I Verified
 I verified the results by running the Excel sheet by myself and changing the numbers of Tomatoes, Carrots, and Mesclun many times based on my predictions and the Solver results. This helped me check whether the results were reasonable. Creating charts also helped me understand the important points for maximizing profit. For example, I changed the carrot limit from 20 to 21 beds and confirmed that the profit increased by about **$353**. This helped me verify that the model was working correctly.
+
+## 2026-10-26: Stage 2 Spec, Build, Audit Revisions Based on Instructor Feedback
+- **Prompt / Request**: Asked AI(Genimi Notebook and ChatGPT) to translate and explain the instructor's feedback on the Stage 2 Spec, Build, Audit.
+- **AI Output Provided**: Translation and detailed explanation of the instructor's critique points.
+- **My Revisions / Verification**: Revised the Stage 2 creating new model.xlsx.
