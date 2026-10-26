@@ -121,7 +121,9 @@ The completed Excel model must pass the following checks:
 4. **Solver Check**: The model runs Excel Solver using two different starting points (0 / 0 / 0 and 20 / 0 / 0).
    - Both runs should give the same optimal mix of 10 / 20 / 30.
 
-5. **Excel Formula and Error Checks**: The model checks that all calculations and constraints are correct.
+5. **Verified result**: Both Solver runs (starting from 0 / 0 / 0 and 20 / 0 / 0) returned 10 / 20 / 30, with approximately $42,775 in seasonal net profit.
+
+6. **Excel Formula and Error Checks**: The model checks that all calculations and constraints are correct.
    - All calculated cells must use formulas with named ranges instead of manually entered values.
    - There should be no Excel errors, such as #REF!, #DIV/0!, or #NAME?.
    - All constraint checks must show that the limits are satisfied.
