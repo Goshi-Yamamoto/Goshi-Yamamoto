@@ -2,7 +2,7 @@
 type: spec
 capability: marginal-analysis
 engagement: perfect-competition
-date: 2026-10-20
+date: 2026-10-26
 status: audited            # draft | built | audited
 built_with: "Gemini Notebook"
 ---
