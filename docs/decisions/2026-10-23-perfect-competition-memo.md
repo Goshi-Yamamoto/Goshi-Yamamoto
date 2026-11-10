@@ -10,4 +10,6 @@ The main decision rule is **P >= MC**. For tomatoes, Bed 10 has a marginal cost 
 For carrots and mesclun, the market price remains higher than marginal cost up to their maximum limits. Therefore, the farm should produce **20 carrot beds** and **30 mesclun beds**. This crop mix also leaves some unused land and about **1,200 labor hours** as a safety buffer.
 
 ## What Would Change My Recommendation
-The recommendation could change if crop capacity limits, market prices, or labor costs change. For example, if the tomato price rises above **$9,390.17**, adding the 11th tomato bed may become profitable. If market price falls below **AVC**, the farm should consider stopping production of that crop in the short run.
+The recommendation could change if crop limits, market prices, or labor costs change. If the farm can increase only one crop limit, it should increase **the carrot limit first** because one additional carrot bed increases profit by about **$353.10**, while one additional mesclun bed increases profit by about **$246.57**. However, the second additional carrot bed may not give the same profit, so the farm should check its marginal cost before adding another bed.
+
+For example, if the tomato price rises above **$9,390.17**, adding the 11th tomato bed may become profitable. If the market price falls below **AVC**, the farm should consider stopping production of that crop in the short run.
