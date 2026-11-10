@@ -70,7 +70,8 @@ My Revisions / Verification: checked the marginal costs in my Excel model, teste
 AI helped me understand how to complete this work step by step. It was my first time using Excel Solver and GitHub, so I did not know how to use them at the beginning. AI explained each process in detail, which helped me complete all the tasks. Since I am an international student, AI also helped me with English expressions, grammar, and translation.
 
 ### Where It Was Wrong
-The most important problem happened when I first used Excel Solver. Some conditions were missing, and the calculation settings were unclear, especially how decimal values should be handled. Because of this, I could not get the correct result. I could not solve this problem only with my own knowledge, and the professor's feedback helped me understand what was wrong and fix the model. Also, when I first worked on the assignment, Gemini Notebook did not always give accurate results, so I started using ChatGPT more often.
+The most memorable problem happened when I first used Excel Solver. Some conditions were missing, and some calculation settings were unclear, especially how decimal values should be handled. Because of this, I could not get the correct result. For example, the calculated profit was about $42,775, but another explanation showed $42,762, creating a $13 difference. The result was not very far off, but it showed that rounding and calculation settings could make the final numbers slightly different.
+However, I could not solve this problem with only my own knowledge or AI. The professor's feedback helped me understand what was wrong and fix the model. I also used Gemini Notebook when I first worked on the Stage 0 assignment, but some important requirements from the assignment were missing from its guidance. For example, it did not guide me to create specific one-line descriptions for the eight skeleton folders, such as analysis/, docs/, and data/. Because of this experience, I started using ChatGPT more often and also learned that I should always check the original assignment instructions carefully.
 
 ### How I Verified
 I verified the results by running the Excel sheet by myself and changing the numbers of Tomatoes, Carrots, and Mesclun many times based on my predictions and the Solver results. This helped me check whether the results were reasonable. Creating charts also helped me understand the important points for maximizing profit. For example, I changed the carrot limit from 20 to 21 beds and confirmed that the profit increased by about **$353**. This helped me verify that the model was working correctly.
@@ -79,3 +80,9 @@ I verified the results by running the Excel sheet by myself and changing the num
 - **Prompt / Request**: Asked AI(Genimi Notebook and ChatGPT) to translate and explain the instructor's feedback on the Stage 2 Spec, Build, Audit.
 - **AI Output Provided**: Translation and detailed explanation of the instructor's critique points.
 - **My Revisions / Verification**: Revised the Stage 2 creating new model.xlsx, and fixing spec.md.
+
+## 2026-11-10: Stage 1.3 — Report the Findings Revisions Based on Instructor Feedback
+- **Prompt / Request**: Asked AI(ChatGPT) to translate and explain the instructor's feedback on the Stage 1.3 — Report the Findings.
+- **AI Output Provided**: Translation and detailed explanation of the instructor's critique points.
+- **My Revisions / Verification**: Revised the Stage 3 changing Decision Memo(What Would Change My Recommendation) and prompt log(Reflection — Stage 1.3
+).
