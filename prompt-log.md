@@ -86,3 +86,8 @@ I verified the results by running the Excel sheet by myself and changing the num
 - **AI Output Provided**: Translation and detailed explanation of the instructor's critique points.
 - **My Revisions / Verification**: Revised the Stage 3 changing Decision Memo(What Would Change My Recommendation) and prompt log(Reflection — Stage 1.3
 ).
+
+## 2026-11-15: Individual Research Paper — Research Brief
+- **Prompt / Request**: Used AI (ChatGPT and Claude) to develop and review my Research Brief.
+- **AI Output Provided**: Helped structure the Brief and identify weaknesses in the hypotheses and assumptions.
+- **My Revisions / Verification**: Revised the hypotheses, clarified the profit-maximization objective, and changed monthly sales to 2,000 cups.
