@@ -29,7 +29,7 @@ The base selling price is assumed to be **$5.00 per cup**, and the cafe sells **
 The model will search for the price change that produces the highest monthly contribution profit. I will test price changes in 1 percentage-point steps, including both price decreases and price increases.
 
 If the optimal price is found at the upper or lower end of the search range, I will expand the range and run the model again. This helps prevent the search range itself from deciding the result.
-I will also keep four simple strategies as reference points;
+I will also keep four simple strategies as reference points:
 
 * No price increase
 * An increase equal to the cost increase
@@ -131,7 +131,7 @@ This research is based on a simulation, so the results depend on the assumptions
 
 First, international green coffee prices do not include all costs of bringing coffee to Hawaii, such as freight and local distribution costs.
 
-Second, the elasticity values do not come directly from customers of a small Hawaii cafe. The estimates from Akiyama and Varangis (1990), Koerner (2002), and Nakamura and Zerom (2009) come from different coffee markets and model specifications. The elasticity faced by one cafe may also change depending on the pricing decisions of nearby competitors.
+Second, the elasticity values do not come directly from customers of a small Hawaii cafe. The estimates from Hawaii Department of Agriculture (2024), Koerner (2002), and Nakamura and Zerom (2009) come from different coffee markets and model specifications. The elasticity faced by one cafe may also change depending on the pricing decisions of nearby competitors.
 
 Third, the food contribution profit is an assumed value rather than observed data from a specific cafe. I will test different values in the sensitivity analysis.
 
