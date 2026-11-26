@@ -11,7 +11,7 @@ status: committed
 **Research Topic: The Increase in Arabica Coffee Prices from 2023 to 2025 and Pricing Decisions for Small Cafes in Hawaii**
 
 ## The Problem
-The increase in international Arabica green coffee bean prices from 2023 to 2025 may have increased the purchasing costs for small cafes in Hawaii that use imported coffee beans.
+International Arabica green coffee prices increased from 2023 to 2025. This may have increased coddee-bean for small cafes in Hawaii that use Arabica coffee beans.
 
 Cafe owners may consider raising their selling prices to respond to higher costs. However, if customers buy less coffee because of the higher price, the price increase may reduce profit instead. Customers are also affected because they must decide whether to continue buying coffee at the higher price or choose another cafe.
 
