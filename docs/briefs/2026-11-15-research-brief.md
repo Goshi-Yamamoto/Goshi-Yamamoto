@@ -48,10 +48,10 @@ I use linear demand because it allows the model to find a finite optimal price. 
 ### Customer Price Elasticity
 I will test customer price elasticity over a range from approximately -0.5 to -4.0. I will focus on four main scenarios:
 
-*-0.5: A relatively inelastic reference case. Table 3 of Akiyama and Varangis (1990) reports price elasticities around this level for several coffee-importing countries, including -0.54 for Austria, -0.51 for the United Kingdom, -0.49 for Greece, and -0.46 for the United States.
-*-1.0: A middle reference case. Koerner (2002) reports average own-price elasticities for roasted coffee in Germany ranging from about -0.59 to -1.12 across different model specifications.
-*-2.0: A more elastic reference case. In Table 5 of Nakamura and Zerom (2010), the OLS2 specification reports a median price elasticity of 1.96 in absolute value, which is close to -2.0 when written as a demand elasticity.
-*-3.5: A high-elasticity reference case. In the random-coefficients specification in Table 5 of Nakamura and Zerom (2010), the median price elasticity is 3.46 in absolute value, which is close to -3.5.
+* -0.5: A relatively inelastic reference case. Table 3 of Akiyama and Varangis (1990) reports price elasticities around this level for several coffee-importing countries, including -0.54 for Austria, -0.51 for the United Kingdom, -0.49 for Greece, and -0.46 for the United States.
+* -1.0: A middle reference case. Koerner (2002) reports average own-price elasticities for roasted coffee in Germany ranging from about -0.59 to -1.12 across different model specifications.
+* -2.0: A more elastic reference case. In Table 5 of Nakamura and Zerom (2010), the OLS2 specification reports a median price elasticity of 1.96 in absolute value, which is close to -2.0 when written as a demand elasticity.
+* -3.5: A high-elasticity reference case. In the random-coefficients specification in Table 5 of Nakamura and Zerom (2010), the median price elasticity is 3.46 in absolute value, which is close to -3.5.
 
 The 1.96 and 3.46 values come from different model specifications in the same study, so I use them as reference estimates rather than as direct measurements of two different real-world cafe situations.
 
@@ -74,10 +74,10 @@ International green coffee prices do not include all costs faced by a small cafe
 To compare pricing strategies, I will use monthly contribution profit.
 The calculation will include variable costs such as:
 
-*Coffee beans
-*Cups and other packaging
-*Payment processing fees
-*Food contribution profit connected with each customer
+* Coffee beans
+* Cups and other packaging
+* Payment processing fees
+* Food contribution profit connected with each customer
 
 Payment processing fees will be treated as a percentage of sales, so the fee will change when the selling price changes.
 
@@ -99,15 +99,13 @@ Even under the **100% pass-through scenario**, I expect the cost increase to be 
 
 I expect that differences in customer price elasticity will have a greater effect on the price increase that maximizes monthly contribution profit than differences in the coffee bean cost pass-through rate.
 
-More specifically, I expect that changing the pass-through rate from **50% to 100%** will not greatly change the best pricing strategy.
-
-However, changing price elasticity between **-0.5, -1.0, and -2.0** is expected to change the optimal price increase.
+More specifically, I expect changes in elasticity from approximately -0.5 to -4.0 to produce a larger change in the optimal price than changes in the pass-through rate from 0% to 100%.
 
 ## How I Would Know I Was Wrong
 
 ### Hypothesis 1
 
-I will calculate the increase in ingredient cost per cup by comparing the annual average Arabica green coffee bean prices in 2023 and 2025 and adjusting for weight loss during roasting.
+I will calculate the increase in ingredient cost per cup using the 2023 and 2025 annual average Arabica green coffee bean prices, 19.5 grams of roasted coffee per cup, and a 15% roasting weight loss.
 
 If the estimated increase in ingredient cost is **$0.50 or more per cup** under the 100% pass-through scenario, I will revise my expectation that the impact is small.
 
@@ -115,10 +113,32 @@ I use **$0.50** as the decision point because it is equal to **10% of the $5.00 
 
 ### Hypothesis 2
 
-I will compare the price increase that produces the highest monthly contribution profit when changing price elasticity under the same pass-through rate.
+I will compare the change in the optimal price under two conditions.
 
-I will also compare the result when changing the pass-through rate under the same price elasticity.
+First, I will change elasticity from approximately -0.5 to -4.0 while holding the coffee-cost pass-through rate at 100%.
 
-If changing price elasticity does not change the optimal price increase, or if changing the pass-through rate has an equal or greater effect on the pricing decision, I will revise my expectation that price elasticity is the more important factor.
+Second, I will change the pass-through rate from 0% to 100% while holding elasticity at -2.0.
 
-The conclusions about pricing strategies in this research are based on simulation results under the assumptions of the model. They do not directly prove how actual cafe customers will respond to price changes.
+I will compare the difference between the highest and lowest optimal price changes in percentage points. Because the model searches in 1 percentage-point steps, differences smaller than one percentage point cannot be identified separately.
+
+If changing elasticity causes a smaller or equal change in the optimal price compared with changing the pass-through rate, I will revise my expectation that elasticity is the more important factor.
+
+## Limitations
+
+This research is based on a simulation, so the results depend on the assumptions used in the model.
+
+First, international green coffee prices do not include all costs of bringing coffee to Hawaii, such as freight and local distribution costs.
+
+Second, the elasticity values do not come directly from customers of a small Hawaii cafe. The estimates from Akiyama and Varangis (1990), Koerner (2002), and Nakamura and Zerom (2010) come from different coffee markets and model specifications. The elasticity faced by one cafe may also change depending on the pricing decisions of nearby competitors.
+
+Third, the food contribution profit is an assumed value rather than observed data from a specific cafe. I will test different values in the sensitivity analysis.
+
+Finally, the results show what happens under the assumptions of the model. They do not directly prove how actual cafe customers will respond to price changes.
+
+## References
+* Akiyama, T., & Varangis, P. N. (1990). The Impact of the International Coffee Agreement on Producing Countries. The World Bank Economic Review, 4(2), 157–173.
+* Franca, A. S., Oliveira, L. S., Oliveira, R. C. S., Agresti, P. C. M., & Augusti, R. (2009). A preliminary evaluation of the effect of processing temperature on coffee roasting degree assessment. Journal of Food Engineering, 92(3), 345–352.
+* Koerner, J. (2002). The Dark Side of Coffee: Price War in the German Market for Roasted Coffee. University of Kiel.
+* Nakamura, E., & Zerom, D. (2010). Accounting for Incomplete Pass-Through. Review of Economic Studies, 77(3), 1192–1230.
+* Specialty Coffee Association. (2017). SCA Minimum Certification Requirements for Coffee Brewers.
+* World Bank. Commodity Price Data (The Pink Sheet): Coffee, Arabica.
