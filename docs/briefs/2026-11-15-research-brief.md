@@ -2,7 +2,7 @@
 type: brief
 engagement: research-paper
 capability: elasticity-analysis
-date: 2026-11-15
+date: 2026-11-26
 status: committed
 ---
 
@@ -11,39 +11,81 @@ status: committed
 **Research Topic: The Increase in Arabica Coffee Prices from 2023 to 2025 and Pricing Decisions for Small Cafes in Hawaii**
 
 ## The Problem
-
 The increase in international Arabica green coffee bean prices from 2023 to 2025 may have increased the purchasing costs for small cafes in Hawaii that use imported coffee beans.
 
-Cafe owners may consider raising their selling prices to respond to higher costs. However, if customers buy less coffee because of the higher price, the price increase may reduce profit instead.
+Cafe owners may consider raising their selling prices to respond to higher costs. However, if customers buy less coffee because of the higher price, the price increase may reduce profit instead. Customers are also affected because they must decide whether to continue buying coffee at the higher price or choose another cafe.
 
-I am interested in how much a small cafe should increase its price to maximize monthly contribution profit when its costs increase.
+I am interested in how much a small cafe should change its price to maximize monthly contribution profit when its costs increase.
 
-In this research, I will estimate how the increase in green coffee bean prices from 2023 to 2025 affects the cost per cup. I will also compare different pricing strategies under different levels of customer price elasticity. Finally, I will make a pricing recommendation for small cafe owners in Hawaii.
+In this research, I will estimate how the increase in green coffee bean prices from 2023 to 2025 affects the cost per cup. I will also search for the optimal price change and examine how customer price elasticity and the coffee-cost pass-through rate affect that result. I will also compare different pricing strategies under different levels of customer price elasticity. Finally, I will make a pricing recommendation for small cafe owners in Hawaii.
 
 ## What I Am Assuming
-
+### Cafe and Product
 I assume a small cafe in Hawaii sells a 12 oz hot black coffee made with imported Arabica beans. Hawaiian-grown coffee, such as Kona coffee, is not included because its pricing is different.
 
-The base selling price is assumed to be **$5.00 per cup**, and the cafe sells **2,000 cups per month**. I will compare four pricing strategies:
+The base selling price is assumed to be **$5.00 per cup**, and the cafe sells **2,000 cups per month** at this price.
+
+### Pricing Strategy
+The model will search for the price change that produces the highest monthly contribution profit. I will test price changes in 1 percentage-point steps, including both price decreases and price increases.
+
+If the optimal price is found at the upper or lower end of the search range, I will expand the range and run the model again. This helps prevent the search range itself from deciding the result.
+I will also keep four simple strategies as reference points
 
 * No price increase
 * An increase equal to the cost increase
 * A 5% increase
 * A 10% increase
 
-I assume that customers will reduce the amount of coffee they buy when the price increases. However, the size of this change depends on price elasticity. I will use three elasticity scenarios:
+These strategies are useful because they represent simple choices that a cafe owner may realistically consider.
 
-* **-0.5**
-* **-1.0**
-* **-2.0**
+### Demand and Quantity
+The main model will use a linear demand curve that passes through the base point of $5.00 and 2,000 cups per month.
 
-To compare the pricing strategies, I will use **monthly contribution profit**, which is revenue minus variable costs such as coffee beans, packaging, and payment processing fees. I assume that fixed costs, such as rent and fixed labor costs, do not change between the different pricing strategies.
+The elasticity values in this research represent elasticity at the base price of $5.00, not at every price on the demand curve. Because the demand curve is linear, elasticity changes as the price changes.
 
-For green coffee bean prices, I will use the annual average international Arabica prices for **2023 and 2025**. I will adjust for weight loss during roasting and compare two scenarios in which **50% or 100% of the green bean price increase** is passed through to the cafe's coffee bean cost.
+I use linear demand because it allows the model to find a finite optimal price. I will also use a constant-elasticity demand model as a robustness check in the appendix.
 
-The **100% pass-through** case is the upper scenario in this research model, but it is not an absolute upper limit for actual wholesale price increases.
+### Customer Price Elasticity
+I will test customer price elasticity over a range from approximately -0.5 to -4.0. I will focus on four main scenarios:
 
-I will also use the U.S. Producer Price Index (**PPI**) for roasted coffee as a reference. However, this index does not directly show the actual purchasing prices paid by small cafes in Hawaii.
+*-0.5: A relatively inelastic reference case. Table 3 of Akiyama and Varangis (1990) reports price elasticities around this level for several coffee-importing countries, including -0.54 for Austria, -0.51 for the United Kingdom, -0.49 for Greece, and -0.46 for the United States.
+*-1.0: A middle reference case. Koerner (2002) reports average own-price elasticities for roasted coffee in Germany ranging from about -0.59 to -1.12 across different model specifications.
+*-2.0: A more elastic reference case. In Table 5 of Nakamura and Zerom (2010), the OLS2 specification reports a median price elasticity of 1.96 in absolute value, which is close to -2.0 when written as a demand elasticity.
+*-3.5: A high-elasticity reference case. In the random-coefficients specification in Table 5 of Nakamura and Zerom (2010), the median price elasticity is 3.46 in absolute value, which is close to -3.5.
+
+The 1.96 and 3.46 values come from different model specifications in the same study, so I use them as reference estimates rather than as direct measurements of two different real-world cafe situations.
+
+These studies also do not directly measure customers at a small cafe in Hawaii. Therefore, the four elasticity values are used as economic scenarios rather than exact estimates.
+
+The elasticity faced by one cafe may also depend on competitor behavior. In a monopolistically competitive market, if only one cafe raises its price, customers may switch to nearby competitors, making the cafe's residual demand more elastic. If nearby cafes also raise their prices, customers have fewer cheaper substitutes, so demand may become less elastic.
+
+### Coffee Cost per Cup
+I will use approximately 19.5 grams of roasted coffee per 12 oz cup. This is based on the Specialty Coffee Association (SCA, 2017) brewing ratio of about 55 grams per liter.
+
+For roasting weight loss, I will use 15% as the base value, based on Franca et al. (2009) for medium roast coffee.
+
+For green coffee prices, I will use the World Bank Pink Sheet monthly Coffee, Arabica price series. I will calculate the 2023 and 2025 annual averages myself by averaging the 12 monthly observations for each year.
+
+I will test coffee-cost pass-through rates from 0% to 100%. The 50% and 100% cases will remain useful reference points.
+International green coffee prices do not include all costs faced by a small cafe in Hawaii, such as freight and local distribution costs. I will identify this as a limitation.
+
+### Profit Measure
+
+To compare pricing strategies, I will use monthly contribution profit.
+The calculation will include variable costs such as:
+
+*Coffee beans
+*Cups and other packaging
+*Payment processing fees
+*Food contribution profit connected with each customer
+
+Payment processing fees will be treated as a percentage of sales, so the fee will change when the selling price changes.
+
+I assume that one customer purchases one coffee in the main model. Food is treated as a complementary product because a customer who stops buying coffee may also stop buying food.
+
+I will use one assumed food contribution profit per customer in the main model and test different values in the sensitivity analysis.
+
+Fixed costs, such as rent and fixed labor costs, are assumed to remain unchanged between pricing strategies.
 
 ## Hypothesis
 
@@ -53,7 +95,7 @@ I expect that the increase in international Arabica green coffee bean prices fro
 
 Even under the **100% pass-through scenario**, I expect the cost increase to be **less than $0.50 per cup**.
 
-### Hypothesis 2: Factors Affecting the Pricing Decision
+### Hypothesis 2: Factors Affecting the Optimal Price
 
 I expect that differences in customer price elasticity will have a greater effect on the price increase that maximizes monthly contribution profit than differences in the coffee bean cost pass-through rate.
 
