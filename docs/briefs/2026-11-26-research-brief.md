@@ -29,7 +29,7 @@ The base selling price is assumed to be **$5.00 per cup**, and the cafe sells **
 The model will search for the price change that produces the highest monthly contribution profit. I will test price changes in 1 percentage-point steps, including both price decreases and price increases.
 
 If the optimal price is found at the upper or lower end of the search range, I will expand the range and run the model again. This helps prevent the search range itself from deciding the result.
-I will also keep four simple strategies as reference points
+I will also keep four simple strategies as reference points;
 
 * No price increase
 * An increase equal to the cost increase
@@ -48,7 +48,7 @@ I use linear demand because it allows the model to find a finite optimal price. 
 ### Customer Price Elasticity
 I will test customer price elasticity over a range from approximately -0.5 to -4.0. I will focus on four main scenarios:
 
-* -0.5: A relatively inelastic reference case. Hawaii Department of Agriculture (2024) summarizes the results of Akiyama and Varangis (1990) and reports coffee demand elasticities of about -0.08 to -0.54 across 22 importing countries.
+* -0.5: A relatively inelastic reference case. Hawaii Department of Agriculture (2024) reports coffee demand elasticities of about -0.08 to -0.54 across 22 importing countries.
 * -1.0: A middle reference case. Koerner (2002) reports average own-price elasticities for roasted coffee in Germany ranging from about -0.59 to -1.12 across different model specifications.
 * -2.0: A more elastic reference case. In Table 5 of Nakamura and Zerom (2009), the OLS2 specification reports a median price elasticity of 1.96 in absolute value, which is close to -2.0 when written as a demand elasticity.
 * -3.5: A high-elasticity reference case. In the random-coefficients specification in Table 5 of Nakamura and Zerom (2009), the median price elasticity is 3.46 in absolute value, which is close to -3.5.
@@ -81,7 +81,7 @@ The calculation will include variable costs such as:
 * Payment processing fees
 * Food variable cost
 
-Payment processing fees will be 2.6% of sales plus $0.15 per transaction, so the fee will change when the selling price changes.
+Payment processing fees will be 2.6% of sales plus $0.15 per transaction (Square, n.d.-b), so the fee will change when the selling price changes.
 
 I assume that one customer purchases one coffee in the main model. Food is treated as a complementary product because a customer who stops buying coffee may also stop buying food.
 
@@ -150,4 +150,5 @@ Finally, the results show what happens under the assumptions of the model. They 
 - Bellwether Coffee. (2026). [*What wholesale coffee really costs per pound*](https://bellwethercoffee.com/blog/cost-of-wholesale-coffee-per-pound).
 - QuickStok. (n.d.). [*Food cost percentage calculator for cafes*](https://www.quickstok.ai/tools/food-cost-calculator).
 - Square. (n.d.-a). [*Bakery and coffee shop prices in Los Angeles*](https://squareup.com/us/en/menu-pricing/bakery-and-coffee-shop-prices-in-los-angeles).
+- Square. (n.d.-b). [*Square processing fees*](https://squareup.com/help/us/en/article/5068-what-are-square-s-fees).
 - Starbucks Corporation. (2023). [*Q3 FY2023 earnings call transcript*](https://s203.q4cdn.com/326826266/files/doc_events/2023/08/1/SBUXQ32023EarningsCall.pdf).
