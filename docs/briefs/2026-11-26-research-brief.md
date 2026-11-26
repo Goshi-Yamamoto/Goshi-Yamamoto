@@ -11,13 +11,13 @@ status: committed
 **Research Topic: The Increase in Arabica Coffee Prices from 2023 to 2025 and Pricing Decisions for Small Cafes in Hawaii**
 
 ## The Problem
-International Arabica green coffee prices increased from 2023 to 2025. This may have increased coddee-bean for small cafes in Hawaii that use Arabica coffee beans.
+International Arabica green coffee prices increased from 2023 to 2025. This may have increased coffee-bean costs for small cafes in Hawaii that use imported Arabica coffee beans.
 
 Cafe owners may consider raising their selling prices to respond to higher costs. However, if customers buy less coffee because of the higher price, the price increase may reduce profit instead. Customers are also affected because they must decide whether to continue buying coffee at the higher price or choose another cafe.
 
 I am interested in how much a small cafe should change its price to maximize monthly contribution profit when its costs increase.
 
-In this research, I will estimate how the increase in green coffee bean prices from 2023 to 2025 affects the cost per cup. I will also search for the optimal price change and examine how customer price elasticity and the coffee-cost pass-through rate affect that result. I will also compare different pricing strategies under different levels of customer price elasticity. Finally, I will make a pricing recommendation for small cafe owners in Hawaii.
+In this research, I will estimate how the increase in green coffee bean prices from 2023 to 2025 affects the cost per cup. I will also search for the optimal price change and examine how customer price elasticity and the coffee-cost pass-through rate affect that result. Finally, I will make a pricing recommendation for small cafe owners in Hawaii.
 
 ## What I Am Assuming
 ### Cafe and Product
@@ -48,10 +48,10 @@ I use linear demand because it allows the model to find a finite optimal price. 
 ### Customer Price Elasticity
 I will test customer price elasticity over a range from approximately -0.5 to -4.0. I will focus on four main scenarios:
 
-* -0.5: A relatively inelastic reference case. Table 3 of Akiyama and Varangis (1990) reports price elasticities around this level for several coffee-importing countries, including -0.54 for Austria, -0.51 for the United Kingdom, -0.49 for Greece, and -0.46 for the United States.
+* -0.5: A relatively inelastic reference case. Hawaii Department of Agriculture (2024) summarizes the results of Akiyama and Varangis (1990) and reports coffee demand elasticities of about -0.08 to -0.54 across 22 importing countries.
 * -1.0: A middle reference case. Koerner (2002) reports average own-price elasticities for roasted coffee in Germany ranging from about -0.59 to -1.12 across different model specifications.
-* -2.0: A more elastic reference case. In Table 5 of Nakamura and Zerom (2010), the OLS2 specification reports a median price elasticity of 1.96 in absolute value, which is close to -2.0 when written as a demand elasticity.
-* -3.5: A high-elasticity reference case. In the random-coefficients specification in Table 5 of Nakamura and Zerom (2010), the median price elasticity is 3.46 in absolute value, which is close to -3.5.
+* -2.0: A more elastic reference case. In Table 5 of Nakamura and Zerom (2009), the OLS2 specification reports a median price elasticity of 1.96 in absolute value, which is close to -2.0 when written as a demand elasticity.
+* -3.5: A high-elasticity reference case. In the random-coefficients specification in Table 5 of Nakamura and Zerom (2009), the median price elasticity is 3.46 in absolute value, which is close to -3.5.
 
 The 1.96 and 3.46 values come from different model specifications in the same study, so I use them as reference estimates rather than as direct measurements of two different real-world cafe situations.
 
@@ -66,6 +66,8 @@ For roasting weight loss, I will use 15% as the base value, based on Franca et a
 
 For green coffee prices, I will use the World Bank Pink Sheet monthly Coffee, Arabica price series. I will calculate the 2023 and 2025 annual averages myself by averaging the 12 monthly observations for each year.
 
+I will use $12 per pound as a practical benchmark for the 2023 wholesale price of roasted coffee, based on Bellwether Coffee (2026).
+
 I will test coffee-cost pass-through rates from 0% to 100%. The 50% and 100% cases will remain useful reference points.
 International green coffee prices do not include all costs faced by a small cafe in Hawaii, such as freight and local distribution costs. I will identify this as a limitation.
 
@@ -77,13 +79,13 @@ The calculation will include variable costs such as:
 * Coffee beans
 * Cups and other packaging
 * Payment processing fees
-* Food contribution profit connected with each customer
+* Food variable cost
 
-Payment processing fees will be treated as a percentage of sales, so the fee will change when the selling price changes.
+Payment processing fees will be 2.6% of sales plus $0.15 per transaction, so the fee will change when the selling price changes.
 
 I assume that one customer purchases one coffee in the main model. Food is treated as a complementary product because a customer who stops buying coffee may also stop buying food.
 
-I will use one assumed food contribution profit per customer in the main model and test different values in the sensitivity analysis.
+In the main model, I assume that 40% of customers buy food (Starbucks Corporation, 2023), the average food price is $5.00 (Square, n.d.-a), and the food cost rate is 40% (QuickStok, n.d.). I will change these values in the sensitivity analysis.
 
 Fixed costs, such as rent and fixed labor costs, are assumed to remain unchanged between pricing strategies.
 
@@ -97,7 +99,7 @@ Even under the **100% pass-through scenario**, I expect the cost increase to be 
 
 ### Hypothesis 2: Factors Affecting the Optimal Price
 
-I expect that differences in customer price elasticity will have a greater effect on the price increase that maximizes monthly contribution profit than differences in the coffee bean cost pass-through rate.
+I expect that differences in customer price elasticity will have a greater effect on the price change that maximizes monthly contribution profit than differences in the coffee bean cost pass-through rate.
 
 More specifically, I expect changes in elasticity from approximately -0.5 to -4.0 to produce a larger change in the optimal price than changes in the pass-through rate from 0% to 100%.
 
@@ -129,16 +131,23 @@ This research is based on a simulation, so the results depend on the assumptions
 
 First, international green coffee prices do not include all costs of bringing coffee to Hawaii, such as freight and local distribution costs.
 
-Second, the elasticity values do not come directly from customers of a small Hawaii cafe. The estimates from Akiyama and Varangis (1990), Koerner (2002), and Nakamura and Zerom (2010) come from different coffee markets and model specifications. The elasticity faced by one cafe may also change depending on the pricing decisions of nearby competitors.
+Second, the elasticity values do not come directly from customers of a small Hawaii cafe. The estimates from Akiyama and Varangis (1990), Koerner (2002), and Nakamura and Zerom (2009) come from different coffee markets and model specifications. The elasticity faced by one cafe may also change depending on the pricing decisions of nearby competitors.
 
 Third, the food contribution profit is an assumed value rather than observed data from a specific cafe. I will test different values in the sensitivity analysis.
+
+The $12 per pound benchmark comes from a 2026 industry article, so it may be higher than the actual wholesale price in 2023 and should be treated as an industry estimate rather than academic evidence.
 
 Finally, the results show what happens under the assumptions of the model. They do not directly prove how actual cafe customers will respond to price changes.
 
 ## References
-* Akiyama, T., & Varangis, P. N. (1990). The Impact of the International Coffee Agreement on Producing Countries. The World Bank Economic Review, 4(2), 157–173.
-* Franca, A. S., Oliveira, L. S., Oliveira, R. C. S., Agresti, P. C. M., & Augusti, R. (2009). A preliminary evaluation of the effect of processing temperature on coffee roasting degree assessment. Journal of Food Engineering, 92(3), 345–352.
-* Koerner, J. (2002). The Dark Side of Coffee: Price War in the German Market for Roasted Coffee. University of Kiel.
-* Nakamura, E., & Zerom, D. (2010). Accounting for Incomplete Pass-Through. Review of Economic Studies, 77(3), 1192–1230.
-* Specialty Coffee Association. (2017). SCA Minimum Certification Requirements for Coffee Brewers.
-* World Bank. Commodity Price Data (The Pink Sheet): Coffee, Arabica.
+
+- Hawaii Department of Agriculture. (2024). [*Final Report on the Economic Study on Changes in Coffee Labeling Law*](https://dab.hawaii.gov/wp-content/uploads/2023/11/Act-222-SLH-2022-FINAL-Report-on-Econ-Study-on-Changes-in-Coffee-Labeling-Law.pdf).
+- Franca, A. S., Oliveira, L. S., Oliveira, R. C. S., Agresti, P. C. M., & Augusti, R. (2009). [*A preliminary evaluation of the effect of processing temperature on coffee roasting degree assessment*](https://www.academia.edu/55160596/A_preliminary_evaluation_of_the_effect_of_processing_temperature_on_coffee_roasting_degree_assessment). *Journal of Food Engineering, 92*(3), 345–352.
+- Koerner, J. (2002). [*The Dark Side of Coffee: Price War in the German Market for Roasted Coffee*](https://macau.uni-kiel.de/servlets/MCRFileNodeServlet/macau_derivate_00006476/FE0204.pdf). University of Kiel.
+- Nakamura, E., & Zerom, D. (2009). [*Accounting for incomplete pass-through*](https://www.nber.org/system/files/working_papers/w15255/w15255.pdf) (NBER Working Paper No. 15255). National Bureau of Economic Research.
+- Specialty Coffee Association. (2017). [*SCA Minimum Certification Requirements for Coffee Brewers*](https://sca.coffee/s/2017-SCA-CHB-Program-Requirements-ba6g.pdf).
+- World Bank. (2026). [*Commodity Price Data (The Pink Sheet): Coffee, Arabica*](https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Pink-Sheet-June-2026.pdf).
+- Bellwether Coffee. (2026). [*What wholesale coffee really costs per pound*](https://bellwethercoffee.com/blog/cost-of-wholesale-coffee-per-pound).
+- QuickStok. (n.d.). [*Food cost percentage calculator for cafes*](https://www.quickstok.ai/tools/food-cost-calculator).
+- Square. (n.d.-a). [*Bakery and coffee shop prices in Los Angeles*](https://squareup.com/us/en/menu-pricing/bakery-and-coffee-shop-prices-in-los-angeles).
+- Starbucks Corporation. (2023). [*Q3 FY2023 earnings call transcript*](https://s203.q4cdn.com/326826266/files/doc_events/2023/08/1/SBUXQ32023EarningsCall.pdf).
