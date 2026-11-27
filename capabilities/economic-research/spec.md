@@ -2,7 +2,7 @@
 type: spec
 engagement: research-paper
 capability: elasticity-analysis
-date: 2026-11-26
+date: 2026-11-27
 status: committed
 ---
 
@@ -51,6 +51,8 @@ The model uses a 12 oz hot black coffee with a base price of $5.00 and 2,000 cup
 | `PRICE_SEARCH_MIN` | -20% | price change | Model assumption |
 | `PRICE_SEARCH_MAX` | +40% | price change | Model assumption |
 | `PRICE_STEP` | 1% | percentage-point step | Model assumption |
+| `SEARCH_MIN_USED` | -50% | price change | Boundary Rule |
+| `SEARCH_MAX_USED` | +60% | price change | Boundary Rule |
 
 The World Bank values are annual averages from the `Coffee, Arabica` series. I will also calculate the 2023 and 2025 averages from the 12 monthly observations for each year as a check.
 
@@ -346,6 +348,23 @@ The final model will document the following checks:
 8. **Figure Check**: Confirm that Figure 2 includes 0%, 50%, and 100% pass-through lines.
 9. **Food Sensitivity Check**: Compare food-attach and food-cost assumptions.
 10. **AI Source Verification**: Check AI-suggested values with the public source before using them.
+
+## Audit Results (2026-11-27)
+
+* Validation Rules: All checks on the Checks sheet returned TRUE, so the main formulas and model checks passed.
+
+* Expanded Search Range: The original -20% to +40% search had some optimal results at the boundary. Following the Boundary Rule, I expanded the range to -50% to +60%, and all linear-demand scenarios were inside the range after the expansion.
+
+* Constant-Elasticity Demand: I expected no finite optimum mainly when elasticity was -1 or higher. In the actual model, all tested elasticity values from -0.5 to -4.0 produced no finite optimum under the constant-elasticity demand model.
+
+* Manual Verification: I completed three additional checks. First, my manual calculation matched the model result of $10,083.97. Second, I changed CARD_RATE and CUP_COST and confirmed that the checks reacted and the profit change matched my manual calculation, then I returned the inputs to their original values. Third, I confirmed that the values in Figure 1 and Figure 2 matched the values in the model tables.
+
+* World Bank Check: My calculated annual averages were $4.5408/kg for 2023 and $8.47/kg for 2025. These match the Pink Sheet annual values of approximately $4.54/kg and $8.47/kg.
+
+* Solver Check: I used GRG Nonlinear with starting points of -20% and +20%. For the four linear-demand scenarios, the Solver results were within 0.5 percentage points of the grid-search results, with a maximum difference of 0.48 percentage points, and both starting points gave the same results. For constant-elasticity demand, Solver stopped at the lower bound of -50%, which supports the finding that the tested range did not contain a finite optimum.
+
+* Floating-Point Error: The 0% rows contain very small floating-point differences, but these differences are too small to affect the model results or conclusions.
+
 
 ## Sources
 
