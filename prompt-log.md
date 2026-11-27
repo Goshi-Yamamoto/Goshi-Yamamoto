@@ -99,7 +99,13 @@ I verified the results by running the Excel sheet by myself and changing the num
 - **My Revisions / Verification**: Revised the Research Brief in accordance with the instructor's critique, documented responses to each critique points, connected the logic between Bried and Spec.
 
 
-## 2026-11-15: Individual Research Paper — Research Spec
+## 2026-11-26: Individual Research Paper — Research Spec
 - **Prompt / Request**: Used AI (ChatGPT and Claude) to develop and review my Research Spec.
 - **AI Output Provided**: Helped structure the Spec and identify weaknesses in the hypotheses and assumptions.
 - **My Revisions / Verification**: Revised the hypotheses, logics, variables, and calculation.
+
+
+## 2026-11-26: Individual Research Paper — Research Spec
+- **Prompt / Request**: Used AI (ChatGPT and Claude) to develop and doublecheck my Research Spec.
+- **AI Output Provided**: Helped structure the Spec, identify weaknesses in the hypotheses and reviewing the verification.
+- **My Revisions / Verification**: Revised weaknesses and guided the processes.
