@@ -63,7 +63,7 @@ The World Bank values are annual averages from the `Coffee, Arabica` series. I w
 3. **Demand Model**: Calculates monthly coffee quantity at each tested price.
 4. **Food Contribution Model**: Calculates food purchases, food revenue, and food variable cost.
 5. **Contribution Profit Model**: Calculates total revenue, variable costs, and monthly contribution profit.
-6. **Price Search**: Tests price changes from -20% to +40% in 1 percentage-point steps.
+6. **Price Search**: Price Search: Tests price changes from -50% to +60% in 1 percentage-point steps.
 7. **Sensitivity & Robustness**: Tests different elasticity, pass-through, food-attach, food-cost, and demand assumptions.
 8. **Figures**: Creates the two main figures for the research paper.
 9. **Checks & Audit**: Checks formulas, assumptions, and model results.
@@ -144,7 +144,7 @@ The model follows these rules:
    - -2.0 = more elastic
    - -3.5 = high-elasticity case
 5. **Pass-Through Range**: The model tests pass-through from 0% to 100% in steps of 10%.
-6. **Price Search**: The model tests price changes from -20% to +40% in 1 percentage-point steps.
+6. **Price Search**: The model tests price changes from -50% to +60% in 1 percentage-point steps. The original range of -20% to +40% was expanded under the Boundary Rule.
 7. **Reference Pricing Strategies**:
    - No price increase
    - Cost-based increase
@@ -204,7 +204,7 @@ The completed model must pass the following checks:
    - The model must test pass-through from 0% to 100% in steps of 10%.
 
 11. **Price Search Check**
-   - Every 1 percentage-point change from -20% to +40% must be tested.
+   - Every 1 percentage-point change from -50% to +60% must be tested.
    - If the best result is at either end, the search range must be expanded.
 
 12. **Constant-Elasticity Check**
