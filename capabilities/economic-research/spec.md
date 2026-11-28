@@ -41,6 +41,8 @@ The model uses a 12 oz hot black coffee with a base price of $5.00 and 2,000 cup
 | `FOOD_COST_PCT` | 40% | percentage of food price | QuickStok (n.d.) |
 | `FOOD_COST_LOW` | 35% | percentage of food price | Sensitivity assumption |
 | `FOOD_COST_HIGH` | 45% | percentage of food price | Sensitivity assumption |
+| `FOOD_ATTACH_ZERO` | 0% | percentage of customers | Sensitivity assumption |
+| `NEW_CUSTOMER_FOOD_ATTACH` | 25% | share of customers above BASE_QTY | Sensitivity assumption |
 | `ELASTICITY_LOW` | -0.5 | elasticity | Hawaii Department of Agriculture (2024) |
 | `ELASTICITY_MID1` | -1.0 | elasticity | Koerner (2002) |
 | `ELASTICITY_MID2` | -2.0 | elasticity | Nakamura & Zerom (2009), Table 5 |
@@ -63,7 +65,7 @@ The World Bank values are annual averages from the `Coffee, Arabica` series. I w
 3. **Demand Model**: Calculates monthly coffee quantity at each tested price.
 4. **Food Contribution Model**: Calculates food purchases, food revenue, and food variable cost.
 5. **Contribution Profit Model**: Calculates total revenue, variable costs, and monthly contribution profit.
-6. **Price Search**: Price Search: Tests price changes from -50% to +60% in 1 percentage-point steps.
+6. **Price Search**: Tests price changes from -50% to +60% in 1 percentage-point steps.
 7. **Sensitivity & Robustness**: Tests different elasticity, pass-through, food-attach, food-cost, and demand assumptions.
 8. **Figures**: Creates the two main figures for the research paper.
 9. **Checks & Audit**: Checks formulas, assumptions, and model results.
@@ -109,6 +111,7 @@ The model uses the following formulas:
 
 12. **Food Purchases**
    - `FOOD_PURCHASES` = `TEST_QTY` × `FOOD_ATTACH_RATE`
+   - New-customer scenario: `FOOD_PURCHASES` = MIN(`TEST_QTY`, `BASE_QTY`) × `FOOD_ATTACH_BASE` + MAX(0, `TEST_QTY` − `BASE_QTY`) × `NEW_CUSTOMER_FOOD_ATTACH`
 
 13. **Food Revenue**
    - `FOOD_REVENUE` = `FOOD_PURCHASES` × `FOOD_PRICE`
@@ -153,13 +156,14 @@ The model follows these rules:
 8. **Cost-Based Increase Rule**:
    - `COST_BASED_INCREASE_PCT` = `BEAN_COST_INCREASE_PER_CUP` / `BASE_PRICE`
 9. **Boundary Rule**:
-   - If the best price is at -20% or +40%, I will expand the search range and run the model again.
-   - In the constant-elasticity model, if elasticity is -1 or higher and there is no finite profit-maximizing price, I will record **no finite optimum**.
+   - If the best price is at either end of the search range, I will expand the search range and run the model again.
+   - In the constant-elasticity model, if there is no finite profit-maximizing price, I will record **no finite optimum**.
 10. **One Customer Rule**: One coffee purchase is treated as one customer and one transaction.
 11. **Food Complement Rule**: If a coffee customer is lost, the model also includes the possible loss of a food purchase.
 12. **Fixed Costs**: Rent and fixed labor costs are not included because they do not change between pricing strategies.
 13. **2023 Bean Benchmark**: The $12/lb roasted-bean price is used as a practical benchmark for the 2023 wholesale roasted-coffee price.
 14. **Industry Benchmarks**: The $12/lb bean price and 40% food-cost rate are industry reference values, not direct observations from one Hawaii cafe.
+15. **New-Customer Food Rule**: In the new-customer scenario, customers lost after a price increase are existing customers (40%); only customers added above 2,000 cups use the new-customer rate.
 
 ## Validation Rules
 
@@ -210,12 +214,16 @@ The completed model must pass the following checks:
 12. **Constant-Elasticity Check**
    - The model must use:
    - `TEST_QTY = BASE_QTY × (TEST_PRICE / BASE_PRICE)^ELASTICITY`
-   - If there is no finite optimum for elasticity of -1 or higher, record **no finite optimum**.
+   - If there is no finite optimum, record **no finite optimum**.
 
 13. **Formula and Error Checks**
    - Calculated cells must use formulas instead of manually entered results.
    - There should be no `#REF!`, `#DIV/0!`, or `#NAME?` errors.
    - Quantity cannot be below zero.
+
+14. **New-Customer Scenario Check**
+   - `NEW_CUSTOMER_FOOD_ATTACH` = 40% reproduces the base model.
+   - At or below 2,000 cups, the new-customer scenario equals the base model.
 
 ## Success Criteria
 
@@ -264,11 +272,12 @@ The model will test:
 
 1. Elasticity from **-0.5 to -4.0** in steps of 0.1.
 2. Pass-through from **0% to 100%** in steps of 10%.
-3. Food-attach rates of **25%, 40%, and 50%**.
+3. Food-attach rates of **0%, 25%, 40%, and 50%**.
 4. Food-cost rates of **35%, 40%, and 45%**.
 5. Linear demand and constant-elasticity demand.
 6. A wider price-search range if the best result is at a boundary.
 7. The four reference pricing strategies.
+8. New customers above 2,000 cups buy food at 25%, while existing customers stay at 40%.
 
 ## Limitations
 
@@ -281,7 +290,7 @@ The model will test:
 7. The 40% food-cost rate is an industry benchmark rather than data from one Hawaii cafe.
 8. The 40% food-attach rate comes from Starbucks and may not represent a small independent cafe.
 9. The cup and lid prices are current Staples prices and may change over time.
-10. The constant-elasticity model may not have a finite optimal price in some cases.
+10. The constant-elasticity model did not have a finite optimal price for any tested elasticity.
 11. The model is a simulation and does not directly measure actual customer behavior.
 
 ## Outputs
@@ -333,6 +342,7 @@ The model reports the following results:
    - Food-attach results
    - Food-cost results
    - Linear-demand and constant-elasticity results
+   - Scenario Results: Optimal price change under the food-attach 0% and new-customer scenarios, compared with the base model.
 
 ## Audit Findings
 
