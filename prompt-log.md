@@ -114,3 +114,8 @@ I verified the results by running the Excel sheet by myself and changing the num
 - **Prompt / Request**: Used AI (ChatGPT and Claude) to develop and review my Research Draft.
 - **AI Output Provided**: Helped structure the Draft and identify weaknesses in the hypotheses.
 - **My Revisions / Verification**: Revised the hypotheses and logics, and proofread my draft.
+
+## 2026-11-28: Individual Research Paper — Research Spec on Instructor Feedback
+- **Prompt / Request**: Used AI (ChatGPT and Claude) to translate and explain the instructor's feedback on my Research Spec.
+- **AI Output Provided**: Translation and detailed explanation of the instructor's critique points.
+- **My Revisions / Verification**: Revised the Research Spec in accordance with the instructor's critique and documented responses to each critique points.
