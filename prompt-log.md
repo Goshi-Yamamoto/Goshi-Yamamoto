@@ -95,8 +95,8 @@ I verified the results by running the Excel sheet by myself and changing the num
 
 ## 2026-11-26: Individual Research Paper — Research Brief on Instructor Feedback
 - **Prompt / Request**: Used AI (ChatGPT and Claude) to translate and explain the instructor's feedback on my Research Brief.
-- **AI Output Provided**: Translation and detailed explanation of the instructor's critique points, confirmed sources and connection between Bried and Spec.
-- **My Revisions / Verification**: Revised the Research Brief in accordance with the instructor's critique, documented responses to each critique points, connected the logic between Bried and Spec.
+- **AI Output Provided**: Translation and detailed explanation of the instructor's critique points, confirmed sources and connection between Brief and Spec.
+- **My Revisions / Verification**: Revised the Research Brief in accordance with the instructor's critique, documented responses to each critique points, connected the logic between Brief and Spec.
 
 
 ## 2026-11-26: Individual Research Paper — Research Spec
