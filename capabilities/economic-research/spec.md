@@ -55,6 +55,7 @@ The model uses a 12 oz hot black coffee with a base price of $5.00 and 2,000 cup
 | `PRICE_STEP` | 1% | percentage-point step | Model assumption |
 | `SEARCH_MIN_USED` | -50% | price change | Boundary Rule |
 | `SEARCH_MAX_USED` | +60% | price change | Boundary Rule |
+| `FOOD0_SEARCH_MIN` | -40% | price change | Boundary Rule (Food 0% scenario) |
 
 The World Bank values are annual averages from the `Coffee, Arabica` series. I will also calculate the 2023 and 2025 averages from the 12 monthly observations for each year as a check.
 
@@ -374,6 +375,11 @@ The final model will document the following checks:
 * Solver Check: I used GRG Nonlinear with starting points of -20% and +20%. For the four linear-demand scenarios, the Solver results were within 0.5 percentage points of the grid-search results, with a maximum difference of 0.48 percentage points, and both starting points gave the same results. For constant-elasticity demand, Solver stopped at the lower bound of -50%, which supports the finding that the tested range did not contain a finite optimum.
 
 * Floating-Point Error: The 0% rows contain very small floating-point differences, but these differences are too small to affect the model results or conclusions.
+
+### Audit Results (2026-11-28)
+
+- Food 0% Scenario Range: In the food-attach 0% scenario, the optimum at elasticity -0.5 was at the +60% upper bound. Following the Boundary Rule, I shifted the search range for this scenario to -40% to +70% (same 1 percentage-point steps). After the shift, the optimum was +60% and inside the range.
+- New Scenario Checks: All new checks on the Checks sheet (items 17–20) returned TRUE, including the check that the new-customer scenario equals the base model at or below 2,000 cups.
 
 
 ## Sources
