@@ -105,7 +105,12 @@ I verified the results by running the Excel sheet by myself and changing the num
 - **My Revisions / Verification**: Revised the hypotheses, logics, variables, and calculation.
 
 
-## 2026-11-26: Individual Research Paper — Research Spec
+## 2026-11-27: Individual Research Paper — Research Spec
 - **Prompt / Request**: Used AI (ChatGPT and Claude) to develop and doublecheck my Research Spec.
 - **AI Output Provided**: Helped structure the Spec, identify weaknesses in the hypotheses and reviewing the verification.
 - **My Revisions / Verification**: Revised weaknesses and guided the processes.
+
+## 2026-11-27: Individual Research Paper — Research Draft
+- **Prompt / Request**: Used AI (ChatGPT and Claude) to develop and review my Research Draft.
+- **AI Output Provided**: Helped structure the Draft and identify weaknesses in the hypotheses.
+- **My Revisions / Verification**: Revised the hypotheses and logics, and proofread my draft.
